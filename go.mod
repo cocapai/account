@@ -10,6 +10,7 @@ require (
 	github.com/go-ini/ini v1.63.2
 	github.com/jinzhu/gorm v1.9.16
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
+	gorm.io/gorm v1.21.16
 )
 
 replace github.com/Unknwon/com => github.com/unknwon/com v0.0.0-20190804042917-757f69c95f3e
