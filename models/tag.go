@@ -53,3 +53,20 @@ func (tag *Tag) BeforeUpdate(scope *gorm.Scope) error {
 	scope.SetColumn("ModifiedOn", time.Now().Unix())
 	return nil
 }
+
+func ExistTagByID(id int) bool {
+	var tag Tag
+	db.Select("id").Where("id = ?", id).First(&tag)
+	if tag.ID > 0 {
+		return true
+	}
+	return false
+}
+func DeleteTag(id int) bool {
+	db.Debug().Where("id = ?", id).Delete(&Tag{})
+	return true
+}
+func EditTag(id int, data interface{}) bool {
+	db.Model(&Tag{}).Where("id = ?", id).Updates(data)
+	return true
+}
