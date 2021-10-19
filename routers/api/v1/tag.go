@@ -7,10 +7,11 @@ import (
 	"gin-blog/pkg/util"
 	"net/http"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
-	"github.com/Unknwon/com"
+	"gin-blog/pkg/logging"
+
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
+	"github.com/unknwon/com"
 )
 
 //

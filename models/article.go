@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -43,7 +44,9 @@ func GetArticleTotal(maps interface{}) (count int) {
 }
 
 func GetArticles(pageNum int, pageSize int, maps interface{}) (articles []Article) {
-	db.Preload("Tag").Where(maps).Offset(pageNum).limit(pageSize).Find(&articles)
+	db.LogMode(true)
+	fmt.Println("hello")
+	db.Debug().Preload("Tag").Where(maps).Offset(pageNum).Limit(pageSize).Find(&articles)
 	return
 }
 
